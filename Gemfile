@@ -42,8 +42,6 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
-  gem 'jquery-rails'
-  gem 'bootstrap-sass'
   gem 'simplecov', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 end

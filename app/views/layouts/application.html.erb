@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Plant Shop</h1>
+      </div>
+    </div>
+    <div class="flash">
+     <%= flash[:alert] %>
+     <%= flash[:notice] %>
+   </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
