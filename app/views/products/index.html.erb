@@ -1,4 +1,6 @@
-<%= link_to "New Plant", new_product_path, class: 'btn-sm btn-primary' %>
+<% if is_admin? %>
+  <%= link_to "New Plant", new_product_path, class: 'btn-sm btn-primary' %>
+<% end %>
 <h1>All Plants</h1>
 <% @products.each do |product| %>
 <div class="plant">
