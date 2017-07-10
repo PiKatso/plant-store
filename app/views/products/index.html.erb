@@ -1,0 +1,7 @@
+<%= link_to "New Plant", new_product_path, class: 'btn-sm btn-primary' %>
+<h1>All Plants</h1>
+<% @products.each do |product| %>
+<div class="plant">
+  <%= link_to product.name, product_path(product) %>
+</div>
+<% end %>

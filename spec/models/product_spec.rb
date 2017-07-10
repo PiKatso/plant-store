@@ -7,7 +7,7 @@ describe Product do
   it { should validate_presence_of :origin }
   it { should validate_presence_of :care }
   it { should validate_presence_of :species }
-  it { should validate_presence_of :type }
+  it { should validate_presence_of :family }
   it { should validate_numericality_of :price }
 
   it { should have_many :reviews }
