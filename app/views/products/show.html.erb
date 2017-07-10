@@ -6,6 +6,23 @@
 <p><%= @product.family %></p>
 <p><%= @product.species %></p>
 
-<%= link_to "Edit #{@product.name}", edit_product_path(@product), class: 'btn-sm btn-primary'  %>
-<%= link_to "Delete #{@product.name}", product_path(@product),
-:method => "delete", class: 'btn-sm btn-danger' %>
+<%= link_to "leave a review for #{@product.name}", new_product_review_path(@product) %>
+<% if @reviews.any? %>
+  <div class="reviews">
+    <% @reviews.each do |review| %>
+    <div class="review">
+      <%= review.content %>
+      <%= link_to "Edit", edit_product_review_path(@product, review), class: 'btn-xs btn-primary' %>
+      <%= link_to "Delete", product_review_path(@product, review), method: 'delete', class: 'btn-xs btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+<% else %>
+  <%= "There are no reviews yet" %>
+<% end %>
+
+<div class="admin">
+  <%= link_to "Edit #{@product.name}", edit_product_path(@product), class: 'btn-sm btn-primary'  %>
+  <%= link_to "Delete #{@product.name}", product_path(@product),
+  :method => "delete", class: 'btn-sm btn-danger' %>
+</div>
