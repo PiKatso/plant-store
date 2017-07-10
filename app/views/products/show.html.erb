@@ -12,7 +12,7 @@
     <% @reviews.each do |review| %>
     <div class="review">
       <%= review.content %>
-      <% if is_author(review) || is_admin? %>
+      <% if current_user && is_author(review) || is_admin? %>
         <%= link_to "Edit", edit_product_review_path(@product, review), class: 'btn-xs btn-primary' %>
         <%= link_to "Delete", product_review_path(@product, review), method: 'delete', class: 'btn-xs btn-danger' %>
       <% end %>

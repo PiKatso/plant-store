@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def is_author(review)
-   current_user.id == review.user_id
+    current_user.id == review.user_id
   end
 
 end
