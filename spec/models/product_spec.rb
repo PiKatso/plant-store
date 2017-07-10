@@ -11,5 +11,7 @@ describe Product do
   it { should validate_numericality_of :price }
 
   it { should have_many :reviews }
+  it { should have_many :order_items }
+  it { should have_many(:orders).through(:order_items) }
 
 end
