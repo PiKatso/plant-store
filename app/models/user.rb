@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :login
+  attr_accessor :user_id
+  after_create :create_account
+  has_one :account
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -23,6 +25,10 @@ class User < ApplicationRecord
     if User.where(email: username).exists?
       errors.add(:username, :invalid)
     end
+  end
+
+  def create_account
+    Account.create(user_id: self.id)
   end
 
 end

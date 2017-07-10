@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :reviews, except: [:index, :show]
   end
 
+  resources :orders
+  resources :order_items
+
+  resource :cart, only: [:show]
   resources :users
 
 end

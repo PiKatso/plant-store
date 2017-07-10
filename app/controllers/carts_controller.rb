@@ -1,0 +1,3 @@
+class CartsController < ActionController
+
+end
