@@ -10,6 +10,6 @@ describe Product do
   it { should validate_presence_of :type }
   it { should validate_numericality_of :price }
 
-  # it { should have_many :reviews }
+  it { should have_many :reviews }
 
 end

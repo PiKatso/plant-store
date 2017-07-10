@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/home', to: 'products#home', as: 'home'
 
   resources :products do
-    resources :reviews
+    resources :reviews, except: [:index, :show]
   end
 
   resources :users
