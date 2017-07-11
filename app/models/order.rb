@@ -6,8 +6,6 @@ class Order < ApplicationRecord
   has_many :products, through: :order_items
   has_many :order_items
 
-  # validates :status, presence: true
-  # validates :total, numericality: true, presence: true
 
   def calculate_total
     self.order_items.collect { |item| item.product.price * item.quantity }.sum
