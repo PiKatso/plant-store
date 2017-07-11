@@ -1,24 +1,44 @@
-# README
+# _Plant Store_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _An application for creating and maintaining an online store with reviews. Complete with user authentication and user shopping cart_
 
-Things you may want to cover:
+#### By _**Kat Gifford & Kai De Rochemont**_
 
-* Ruby version
+##Views
+_Landing page:_
+![]()
 
-* System dependencies
+## Setup/Installation Requirements
 
-* Configuration
+* _Clone the repo_
+* _Run the following commands in the root of the project to set up the application_
+```
+$ bundle install
+$ rails db:create
+$ rails db:schema:load
+$ rails db:seed
+$ rails s
+```
+### Accounts
+The default credentials provided below, will allow you to see the website as a admin user. You may also sign up with your own information.
 
-* Database creation
+| Type | Email | Password |
+| ---- | ----- | -------- |
+| user | user@user.com | password |
+| admin | admin@admin.com | password |
 
-* Database initialization
+## Technologies Used
 
-* How to run the test suite
+* _HTML5/SCSS_
+* _Rails_
+* _Ruby_
+* _Rspec_
+* _Capybara_
+* _Faker_
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### License
 
-* ...
+*This is web page is licensed under the MIT License.*
+
+Copyright (c) 2017 **_Kat Gifford_**
