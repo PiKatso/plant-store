@@ -1,4 +1,5 @@
 class OrderItemsController < ApplicationController
+  before_action :authenticate_user!, :only => [:create]
 
   def create
     @account = Account.where(user_id: current_user.id)[0]
