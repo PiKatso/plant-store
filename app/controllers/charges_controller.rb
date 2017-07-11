@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
   end
 
   def thanks
+    session.delete(:order_id)
     render 'charges/thanks'
   end
 
@@ -19,7 +20,7 @@ class ChargesController < ApplicationController
     amount: @amount,
     description: 'Rails Stripe customer')
     redirect_to thanks_path
-    current_order.update(status: "Payment Accepted")
+    current_order.update(status: "payment accepted")
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
