@@ -1,0 +1,11 @@
+$(function(){
+  var currentQuantity = parseInt($('#cart-quantity').text())
+  if (isNaN(currentQuantity)) {
+    currentQuantity = 0;
+  }
+  var formQuantity = parseInt($('#order_item_quantity').val())
+  console.log(currentQuantity);
+  console.log(formQuantity);
+  var newQuantity = currentQuantity + formQuantity
+  $('#cart-quantity').text(newQuantity)  
+});

@@ -5,6 +5,7 @@ Review.destroy_all
 User.destroy_all
 
 admin = User.create(username: 'admin', email: 'admin@gmail.com', password: 'adminpass', admin: true)
+user = User.create(username: 'user', email: 'user@gmail.com', password: 'userpass', admin: false)
 5.times do |index|
   user = User.create!(
   email: Faker::Internet.email,
@@ -94,7 +95,7 @@ Product.create!(
   image:'https://cdn.shopify.com/s/files/1/0662/5489/products/Calathea_lancifolia_-_rattlesnake_plant_-_pistils_nursery_1024x1024.jpg?v=1495558539'
   )
 Product.create!(
-  name: 'RATTLESNAKE PLANT',
+  name: 'FOXTAIL FERN',
   description: 'Asparagus densiflorus is nicknamed the "Foxtail Fern" due to its dense, fluffy plumes of bright green foliage. Native to southern Africa, the Foxtail Fern is not a true fern, but rather is a flowering perennial plant, closely related to edible asparagus. We love the way that the long "tails" of foliage look as they shoot up from the base of the plant and then arch over the sides of the pot as they grow longer. This unique growth form combined with the dense, tiny leaves make for a bright pop of color and texture in any indoor space.',
   price: 32.00,
   origin: 'Ssouthern Africa from Mozambique to South Africa',

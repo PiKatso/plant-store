@@ -1,6 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#show {
+  padding-bottom: 300px;
+  .product-photo {
+    height: 500px;
+  }
+}
+
 .jumbotron {
   padding: 0;
 }

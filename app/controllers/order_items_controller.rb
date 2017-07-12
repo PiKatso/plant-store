@@ -9,7 +9,10 @@ class OrderItemsController < ApplicationController
     if @order.save
       flash[:alert] = "Item added to cart"
       session[:order_id] = @order.id
-      redirect_to products_path
+      respond_to do |format|
+        format.html { redirect_to products_path }
+        format.js
+      end
     else
       flash[:notice] = "Error adding item to cart"
       redirect_to products_path
