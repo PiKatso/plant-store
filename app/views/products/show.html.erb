@@ -21,7 +21,7 @@
   <%= f.submit "Add to cart" %>
   <% end %>
 
-  <%= link_to "leave a review for #{@product.name}", new_product_review_path(@product) %>
+  <%= link_to "leave a review for #{@product.name}", new_product_review_path(@product), class: 'new-review', remote: true %>
   <% if @reviews.any? %>
   <div class="reviews">
     <% @product.reviews.each do |review| %>
