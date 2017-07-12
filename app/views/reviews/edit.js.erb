@@ -1,0 +1,7 @@
+$(function(){
+  $('.edit-review').click(function(){
+    console.log($(this).parent().find('.edit-form'));
+    $(this).parent().find('.edit-form').html("<%= j render 'form' %>");
+    $('.edit-review').hide();
+  });
+});

@@ -14,6 +14,10 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     @review.user_id = current_user.id
+    # respond_to do |format|
+    #   format.html { redirect_to product_path(@product) }
+    #   format.js
+    # end
     if @review.save
       flash[:notice] = "Review successfully added"
       redirect_to product_path(@product)
@@ -26,6 +30,10 @@ class ReviewsController < ApplicationController
   def edit
     @product = Product.find(params[:product_id])
     @review = @product.reviews.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
@@ -44,7 +52,6 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.find(params[:id])
     if @review.destroy
-      flash[:notice] = "Review successfully removed"
       respond_to do |format|
         format.html { redirect_to product_path(@product) }
         format.js
