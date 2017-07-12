@@ -41,7 +41,10 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.find(params[:id])
     if @review.destroy
       flash[:notice] = "Review successfully removed"
-      redirect_to product_path(@product)
+      respond_to do |format|
+        format.html { redirect_to product_path(@product) }
+        format.js
+      end
     end
   end
 

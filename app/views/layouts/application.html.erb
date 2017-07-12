@@ -19,18 +19,18 @@
           <%= link_to "Plants", products_path, class: 'navbar-brand' %>
           <p class="navbar-text pull-right">
             <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.username %></strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
-            <%= link_to "Cart", cart_path, class: 'navbar-link' %>
+              Logged in as <strong><%= current_user.username %></strong>.
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
+              <%= link_to "Cart", cart_path, class: 'navbar-link' %>
               <% if current_order.quantity %>
                 (<span id="cart-quantity"><%= current_order.quantity %></span>)
               <% else %>
                 (<span id="cart-quantity">0</span>)
               <% end %>
             <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
             <% end %>
           </p>
         </div>
