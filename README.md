@@ -6,7 +6,7 @@
 
 ##Views
 _Products Page:_
-![](https://github.com/PiKatso/plant-store/blob/master/app/assets/images/products-page.png)
+![picture](products-page.png)
 
 ## Setup/Installation Requirements
 
