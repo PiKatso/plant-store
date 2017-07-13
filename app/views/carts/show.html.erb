@@ -1,6 +1,6 @@
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <p><%= link_to item.product.name, product_path(item.product) %> | <%= link_to "Delete", order_item_path(item), :method => "delete" %></p>
+    <p><%= link_to item.product.name, product_path(item.product) %> | <%= link_to "Edit", edit_order_item_path(item), id: "update_cart", remote: true %> | <%= link_to "Delete", order_item_path(item), :method => "delete" %> </p>
     <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
   <% end %>
   <p>Number of Items: <%= current_order.quantity %></p>

@@ -1,0 +1,5 @@
+<%= form_for @order_item, remote: true do |f| %>
+<%= f.hidden_field :quantity, value: @order_item.quantity %>
+<%= f.select :quantity, options_for_select(1..10)%>
+<%= f.submit "Update Cart" %>
+<% end %>

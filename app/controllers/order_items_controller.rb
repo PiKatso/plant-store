@@ -20,7 +20,33 @@ class OrderItemsController < ApplicationController
         format.html { redirect_to products_path }
         format.js
       end
-  end
+    end
+
+    def edit
+      respond_to do |format|
+        format.html { redirect_to products_path }
+        format.js
+      end
+      @order_item = OrderItem.find(params[:id])
+    end
+
+    def update
+      @order_item = OrderItem.find(params[:id])
+      if @order_item.update(quantity: params[:order_item][:quantity])
+        @order_item.order.save
+
+    end
+
+  # def update
+  #   @product = Product.find(params[:id])
+  #   if @product.update(product_params)
+  #     flash[:notice] = "Product successfully updated"
+  #     redirect_to product_path(@product)
+  #   else
+  #     flash[:notice] = "Product update failed"
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     @order = current_order
