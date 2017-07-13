@@ -4,7 +4,6 @@
 
 #### By _**Kat Gifford & Kai De Rochemont**_
 
-##Views
 _Products Page:_
 ![picture](products-page.png)
 
