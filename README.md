@@ -5,8 +5,8 @@
 #### By _**Kat Gifford & Kai De Rochemont**_
 
 ##Views
-_Landing page:_
-![]()
+_Products Page:_
+![](https://github.com/PiKatso/plant-store/blob/master/app/assets/images/products-page.png)
 
 ## Setup/Installation Requirements
 
@@ -15,8 +15,7 @@ _Landing page:_
 ```
 $ bundle install
 $ rails db:create
-$ rails db:schema:load
-$ rails db:seed
+$ rails db:setup
 $ rails s
 ```
 ### Accounts
@@ -41,4 +40,4 @@ The default credentials provided below, will allow you to see the website as a a
 
 *This is web page is licensed under the MIT License.*
 
-Copyright (c) 2017 **_Kat Gifford_**
+Copyright (c) 2017 **_Kat Gifford & Kai DeRochemont_**
