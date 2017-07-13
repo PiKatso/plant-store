@@ -3,6 +3,7 @@
     <p><%= link_to item.product.name, product_path(item.product) %> | <%= link_to "Delete", order_item_path(item), :method => "delete" %></p>
     <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
   <% end %>
+  <p>Number of Items: <%= current_order.quantity %></p>
   <p>Your Total: <%= number_to_currency current_order.total %></p>
 
   <%= link_to "Checkout", new_charge_path, class: 'btn btn-primary' %>

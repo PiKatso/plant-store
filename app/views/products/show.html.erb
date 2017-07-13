@@ -15,13 +15,14 @@
   <p><%= @product.family %></p>
   <p><%= @product.species %></p>
 
+  <% if current_user %>
   <%= form_for @order_item, remote: true do |f| %>
   <%= f.hidden_field :product_id, value: @product.id %>
   <%= f.select :quantity, options_for_select(1..10)%>
   <%= f.submit "Add to cart" %>
   <% end %>
-
   <%= link_to "leave a review for #{@product.name}", new_product_review_path(@product), class: 'new-review', remote: true %>
+  <% end %>
   <% if @reviews.any? %>
   <div class="reviews">
     <% @product.reviews.each do |review| %>
