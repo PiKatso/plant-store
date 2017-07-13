@@ -37,17 +37,6 @@ class OrderItemsController < ApplicationController
       redirect_to cart_path
     end
 
-  # def update
-  #   @product = Product.find(params[:id])
-  #   if @product.update(product_params)
-  #     flash[:notice] = "Product successfully updated"
-  #     redirect_to product_path(@product)
-  #   else
-  #     flash[:notice] = "Product update failed"
-  #     render :edit
-  #   end
-  # end
-
   def destroy
     @order = current_order
     @item = @order.order_items.find(params[:id])

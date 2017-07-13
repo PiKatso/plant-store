@@ -1,9 +1,14 @@
 <% if is_admin? %>
-  <%= link_to "New Plant", new_product_path, class: 'btn-sm btn-primary' %>
+<%= link_to "New Plant", new_product_path, class: 'btn-sm btn-primary' %>
 <% end %>
 <h1>All Plants</h1>
-<% @products.each do |product| %>
-<div class="plant">
-  <%= link_to product.name, product_path(product) %>
+<div class="product-plants">
+  <% @products.each do |product| %>
+  <div class="plant">
+    <a class="plant-item" href="<%= product_path(product) %>">
+      <%= image_tag product.image, :class => "style_image" %>
+      <div class="product-caption"><em><%= product.name %></em><br>$<%= product.price %></div>
+    </a>
+  </div>
+  <% end %>
 </div>
-<% end %>

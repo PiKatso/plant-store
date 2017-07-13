@@ -7,36 +7,48 @@
   </div>
   <% end %>
   <h1><%= @product.name %></h1>
-  <%= image_tag @product.image, class: 'product-photo' %>
-  <p><%= @product.description %></p>
-  <p><%= @product.care %></p>
-  <p><%= @product.origin %></p>
-  <p><%= @product.price %></p>
-  <p><%= @product.family %></p>
-  <p><%= @product.species %></p>
-
-  <% if current_user %>
-  <%= form_for @order_item, remote: true do |f| %>
-  <%= f.hidden_field :product_id, value: @product.id %>
-  <%= f.select :quantity, options_for_select(1..10)%>
-  <%= f.submit "Add to cart" %>
-  <% end %>
-  <%= link_to "leave a review for #{@product.name}", new_product_review_path(@product), class: 'new-review', remote: true %>
-  <% end %>
-  <% if @reviews.any? %>
-  <div class="reviews">
-    <% @product.reviews.each do |review| %>
-    <div class="review">
-      <%= review.content %>
-      <% if current_user && is_author(review) || is_admin? %>
-      <%= link_to "Edit", edit_product_review_path(@product, review), class: 'btn-xs btn-primary edit-review', remote: true %>
-      <%= link_to "Delete", product_review_path(@product, review), method: 'delete', class: 'btn-xs btn-danger delete', remote: true %>
-      <% end %>
-      <div class="edit-form"></div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag @product.image, class: 'product-photo' %>
     </div>
-    <% end %>
+    <div class="col-md-8" id="product-info">
+      <p><%= @product.description %></p>
+      <div class="stats">
+        <h3>Origin</h3>
+        <p><%= @product.origin %></p>
+        <h3>Price</h3>
+        <p><%= @product.price %></p>
+        <h3>Family</h3>
+        <p><%= @product.family %></p>
+        <h3>Species</h3>
+        <p><%= @product.species %></p>
+      </div>
+      <p><%= @product.care %></p>
+      <% if current_user %>
+      <%= form_for @order_item, remote: true do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.select :quantity, options_for_select(1..10)%>
+      <%= f.submit "Add to cart" %>
+      <% end %>
+      <%= link_to "leave a review for #{@product.name}", new_product_review_path(@product), class: 'new-review', remote: true %>
+      <% end %>
+      <% if @reviews.any? %>
+    </div>
+    <div class="reviews">
+      <% @product.reviews.each do |review| %>
+      <div class="review">
+        <%= review.content %>
+        <% if current_user && is_author(review) || is_admin? %>
+        <%= link_to "Edit", edit_product_review_path(@product, review), class: 'btn-xs btn-primary edit-review', remote: true %>
+        <%= link_to "Delete", product_review_path(@product, review), method: 'delete', class: 'btn-xs btn-danger delete', remote: true %>
+        <% end %>
+        <div class="edit-form"></div>
+      </div>
+      <% end %>
+      <% else %>
+      <%= "There are no reviews yet" %>
+      <% end %>
+    </div>
   </div>
-  <% else %>
-  <%= "There are no reviews yet" %>
-  <% end %>
+
 </div>

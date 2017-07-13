@@ -1,17 +1,108 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Allerta|Racing+Sans+One|Sintony|Yeseva+One');
+
 
 #show {
-  padding-bottom: 300px;
   .product-photo {
-    height: 500px;
+    width: 100%;
+    object-fit: contain;
+  }
+  #product-info {
+    p {
+      font-size: 1.5em;
+    }
   }
 }
 
+body {
+  background-image: url('/assets/imagebg.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .jumbotron {
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 0;
+  margin: 0;
+  #title {
+    margin: 50px 0;
+    font-family: 'Sintony', sans-serif;
+    font-size: 9em;
+    color: white;
+    -webkit-text-stroke-width: 1.5px;
+     -webkit-text-stroke-color: #505050;
+  }
+}
+
+.container {
+  width: 80%;
+}
+
+#content {
+  min-height: 700px;
+  border: #efefef 1px solid;
+  margin-top: 5em;
+  background-color: #fff;
+  margin-bottom: 5em;
+  padding: 50px;
+  h1 {
+    text-align: center;
+    margin: 0 0 25px 0;
+  }
 }
 
 .review {
   margin: 15px 0;
+}
+
+.navbar {
+  font-family: 'Sintony', sans-serif;
+
+  border-radius: 0 !important;
+}
+nav {
+  color: #565656;
+  font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.6);
+  a {
+    color: #565656;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #333;
+  }
+  .navbar-brand {
+    font-size: 25px;
+    line-height: 1.5;
+  }
+  #current-user {
+    margin-right: 15px;
+  }
+}
+.product-plants {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.plant {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 1em;
+  a {
+    .style_image {
+      height: 150px;
+      width: 150px;
+      overflow: hidden;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
