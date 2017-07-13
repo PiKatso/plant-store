@@ -24,17 +24,17 @@ class OrderItemsController < ApplicationController
 
     def edit
       respond_to do |format|
-        format.html { redirect_to products_path }
         format.js
+        format.html { redirect_to cart_path }
       end
       @order_item = OrderItem.find(params[:id])
     end
 
     def update
       @order_item = OrderItem.find(params[:id])
-      if @order_item.update(quantity: params[:order_item][:quantity])
-        @order_item.order.save
-
+      @order_item.update(quantity: params[:order_item][:quantity])
+      @order_item.order.save
+      redirect_to cart_path
     end
 
   # def update
